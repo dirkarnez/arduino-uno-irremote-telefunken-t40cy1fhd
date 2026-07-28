@@ -35,6 +35,7 @@
 // 01:01:12.273 -> E51A5FA0
 // 01:01:12.273 -> Protocol=NEC Address=0xA0, Command=0x1A, Raw-Data=0xE51A5FA0, 32 bits, LSB first, Gap=3276750us, Duration=67500us
 // 01:01:12.408 -> Send with: IrSender.sendNEC(0xA0, 0x1A, <numberOfRepeats>);
+#include <IRremote.hpp>
 
 uint8_t tSendPin = 3;
 void setup()  
@@ -45,31 +46,25 @@ void setup()
                                
 void loop()  
 {  
-  IrSender.sendNECRaw(0xE51A5FA0, 0);
-  delay(100);
-  IrSender.sendNECRaw(0xE51A5FA0, 0);
-  delay(100);
-  IrSender.sendNECRaw(0xE51A5FA0, 0);
-  delay(100);
-  IrSender.sendNECRaw(0xE51A5FA0, 0);
-  delay(100);
-
+  // IrSender.sendNECRaw(0xE51A5FA0, 0);
+  // delay(100);
   
-  IrSender.sendNECRaw(0xE31C5FA0, 0);
+  IrSender.sendNECRaw(0xE31C5FA0, NO_REPEATS);
   delay(100);
   
-  IrSender.sendNECRaw(0xAE515FA0, 0);
+  IrSender.sendNECRaw(0xAE515FA0, NO_REPEATS);
   delay(100);
   
-  IrSender.sendNECRaw(0xAE515FA0, 0);
+  IrSender.sendNECRaw(0xAE515FA0, NO_REPEATS);
   delay(100);
   
-  IrSender.sendNECRaw(0xAE515FA0, 0);
+  IrSender.sendNECRaw(0xAE515FA0, NO_REPEATS);
   delay(100);
   
-  IrSender.sendNECRaw(0xAA555FA0, 0);
+  IrSender.sendNECRaw(0xAA555FA0, NO_REPEATS);
   delay(100);
   
   delay(5000);
 }  
+
 
